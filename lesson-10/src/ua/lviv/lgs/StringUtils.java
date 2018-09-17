@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class StringUtils {
 
 	public static void main(String[] args) {
-	
+	 
 		String s  = new String("Java");
 		
 		System.out.println(s.charAt(0));

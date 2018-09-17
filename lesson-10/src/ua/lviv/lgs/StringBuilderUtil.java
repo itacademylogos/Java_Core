@@ -5,7 +5,7 @@ public class StringBuilderUtil {
 
 		StringBuilder sb = new StringBuilder("Start");
 		System.out.println(sb.append(" is not finish").append(" but a good").append(" start"));
-
+    
 		System.out.println(sb.length());
 
 		System.out.println(sb.capacity());

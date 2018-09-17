@@ -5,7 +5,7 @@ public class StringBufferUtil {
 	public static void main(String[] args) {
 		
 		
-		StringBuffer sb = new StringBuffer("Start");
+		StringBuffer sb = new StringBuffer("Start"); 
 		
 		System.out.println(sb.append(" is not finish").append(" but a good").append(" start"));
 		
