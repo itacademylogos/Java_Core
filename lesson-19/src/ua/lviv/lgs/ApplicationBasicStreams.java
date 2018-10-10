@@ -2,6 +2,7 @@ package ua.lviv.lgs;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -14,62 +15,62 @@ import java.io.Writer;
 public class ApplicationBasicStreams {
 
 	public static void main(String[] args) throws IOException {
-
-		File file = new File("file.txt");
-
-		// byteStream
-//		writeOS(file);
-//		String textFromFile = readIS(file);
-//		System.out.println(textFromFile);
 		
-		//symbol streams 
-		writeSS(file);
-		String textFromFileSysmbols = readSS(file);
-		System.out.println(textFromFileSysmbols);
-	}
-
-	public static void writeOS(File file) throws IOException {
-		OutputStream os = new FileOutputStream(file);
-		os.write("Hello Logos".getBytes());
-		os.close();
-	}
-
-	public static String readIS(File file) throws IOException {
-		StringBuilder st = new StringBuilder();
-		InputStream is = new FileInputStream(file);
-		int inform = is.read();
-		char data;
-
-		while (inform != -1) {
-			data = (char) inform;
-			st.append(data);
-			inform = is.read();
-		}
-
-		is.close();
-
-		return st.toString();
-	}
-
-	public static void writeSS(File file) throws IOException {
-		Writer os = new FileWriter(file, false);
-		os.write("Hello Logos from Symbol Stream");
-		os.close();
-	}
-
-	public static String readSS(File file) throws IOException {
-		StringBuilder st = new StringBuilder();
-		Reader is = new FileReader(file);
-		char array[] =new char[100];
-		is.read(array);
-		is.close();
-		for (int i = 0; i < array.length; i++) {
-			st.append(array[i]);
-		}
+		File file = new File("basicStreams.txt");
+		writeUsingOutputStream("Hello students, I am teacher!", file);
 		
-		return st.toString();
-	}
+		String textFromFileIS = readUsingInputStream(file);
+		System.out.println(textFromFileIS+"\n");
 
+		File file2 = new File("basicStreams2.txt");
+		writeUsingWriter("Run Forest Run", file2);
+		String textFromReader = readUsingReader(file2);
+		System.out.println(textFromReader);
+	}
 	
+	
+	public static String  readUsingInputStream(File file) throws IOException {
+		StringBuilder sb = new StringBuilder();
+		InputStream is =new FileInputStream(file);
+		int information = is.read();
+		char data;
+		
+		while(information != -1) {
+			data = (char)information;
+			sb.append(data);
+			information = is.read();
+		}
+		is.close();
+		
+		return sb.toString();
+	}
+	
+	public static void writeUsingOutputStream(String data, File file) throws IOException {
+		OutputStream os = new FileOutputStream(file);
+		os.write(data.getBytes());
+		os.close();
+	}
+	
+	
+	public static void writeUsingWriter(String data, File file) throws IOException {
+		Writer wr = new FileWriter(file);
+		wr.write(data);
+		wr.close();
+	}
+	
+	public static String readUsingReader(File file) throws IOException {
+		StringBuilder st  = new StringBuilder();
+		Reader r = new FileReader(file);
+		
+		char[] arrayOfChars = new char[100];
+		r.read(arrayOfChars);
+		
+		for (char c : arrayOfChars) {
+			st.append(c);
+		}
+		r.close();
+		
+		return st.toString();
+	}
 	
 }
