@@ -2,7 +2,7 @@
 Шановні студенти, код із занять Ви можете знайти в бренчах.
 
 * [lesson-01](https://github.com/itacademylogos/Java_Core/tree/lesson-01)  (JVM, обгортки примітивів, базові конструкції Java)
-* [lesson-03](https://github.com/itacademylogos/Java_Core/tree/lesson-03)  (Основи ООП)
+* [lesson-02](https://github.com/itacademylogos/Java_Core/tree/lesson-02)  (Основи ООП)
 * [lesson-04](https://github.com/itacademylogos/Java_Core/tree/lesson-04)  (ООП: наслідування, композиція)
 * [lesson-05](https://github.com/itacademylogos/Java_Core/tree/lesson-05)  (ООП: Абстрактний клас, модифікатор final та static)
 * [lesson-06](https://github.com/itacademylogos/Java_Core/tree/lesson-06)  (ООП: Інтерфейс, default та static методи)
